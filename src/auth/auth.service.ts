@@ -16,7 +16,7 @@ export class AuthService {
         private readonly tokenService: TokenService,
         private readonly userService: UsersService
     ) { }
-    async register(registerDto: RegisterDto): Promise<{ user: User, token: string }> {
+    async register(registerDto: RegisterDto): Promise<{ user: User }> {
         const existingUser = await this.userService.findByEmail(registerDto.email);
         if (existingUser) {
             throw new ConflictException('Please, use another email');
@@ -32,7 +32,7 @@ export class AuthService {
 
         this.removeSensitiveFields(savedUser);
         
-        return { user: savedUser, token: this.generateUserToken(savedUser) };
+        return { user: savedUser };
     }
 
     async login(loginDto: LoginDto) { 

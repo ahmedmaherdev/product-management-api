@@ -12,7 +12,7 @@ export class AuthController {
     ) {}
 
     @Post(API_URIS.AUTH.REGISTER)
-    async register(@Body() registerDto: RegisterDto): Promise<{ user: User, token: string }> {
+    async register(@Body() registerDto: RegisterDto): Promise<{ user: User }> {
         return this.authService.register(registerDto);
     }
 
