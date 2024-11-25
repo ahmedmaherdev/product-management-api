@@ -1,0 +1,28 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URI=mongodb://mongo:27017/product-management
+      - JWT_SECRET=0pkXWdfKYqZcf8Rl_0BLMayYsq1SOR_wSv6jPeWIrXQ
+      - JWT_EXPIRES_IN=1d
+    depends_on:
+      - mongo
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run start:prod
+
+  mongo:
+    image: mongo:6
+    container_name: product-management-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
