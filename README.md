@@ -95,8 +95,8 @@ The API endpoints are documented in a Postman collection. You can view and test 
 #### Products
 
 - `POST /products`: Create a new product (Requires authentication).
-- `GET /products`: Get all products with optional pagination.
-- `GET /products/:id`: Get a single product by ID.
+- `GET /products`: Get all products with optional pagination (Requires authentication).
+- `GET /products/:id`: Get a single product by ID (Requires authentication).
 - `PATCH /products/:id`: Update a product (Requires authentication).
 - `DELETE /products/:id`: Delete a product (Admin only).
 
@@ -105,7 +105,7 @@ The API endpoints are documented in a Postman collection. You can view and test 
 ## Testing the Application
 
 1. Import the Postman Collection.
-2. Set the `base_url` variable to `http://localhost:3000` in your Postman environment.
+2. Set the `API_URL` variable to `http://localhost:3000` in your Postman environment.
 3. Use the **Register User** and **Login** endpoints to get a JWT token.
 4. Pass the token in the `Authorization` header for protected routes.
 
