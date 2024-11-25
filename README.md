@@ -124,6 +124,7 @@ The API endpoints are documented in a Postman collection. You can view and test 
 src/
   auth/          # Authentication module.
   products/      # Product module.
+  users/         # User Module.
   common/        # Shared utilities, including pipes, filters, and interceptors.
 docker-compose.yml  # Docker Compose configuration.
 test/            # Test cases for the API.
