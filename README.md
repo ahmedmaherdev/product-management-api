@@ -111,13 +111,6 @@ The API endpoints are documented in a Postman collection. You can view and test 
 
 ---
 
-## Running Tests
-
-- **Unit Tests**: Run `npm run test`.
-- **E2E Tests**: Run `npm run test:e2e`.
-
----
-
 ## Folder Structure
 
 ```plaintext
