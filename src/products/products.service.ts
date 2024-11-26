@@ -15,7 +15,7 @@ export class ProductsService {
         private readonly paginationService: PaginationService
     ) {}
 
-    async findAll(paginationQueryDto: PaginationQueryDto): Promise<{ data: Product[], count: number }> {
+    async findAll(paginationQueryDto: PaginationQueryDto): Promise<any> {
         return await this.paginationService.paginate(this.productModel, paginationQueryDto);
     }
 

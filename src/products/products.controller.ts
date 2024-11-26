@@ -21,7 +21,7 @@ export class ProductsController {
     @Get(API_URIS.PRODUCTS.GET_ALL)
     async findAll(@Query() paginationQueryDto: PaginationQueryDto) {
         return this.productService.findAll(paginationQueryDto);
-        }
+    }
 
     // Get a product by ID
     @Roles(UserRole.USER, UserRole.ADMIN)
